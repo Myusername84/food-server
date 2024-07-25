@@ -48,6 +48,7 @@ app.use(
       secure: true,
       httpOnly: true,
       sameSite: "none",
+      Partitioned: true,
     },
   })
 );
