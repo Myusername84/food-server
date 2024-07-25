@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://food-client-bay.vercel.app/",
+    origin: "https://food-client-bay.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "DELETE"],
   })
@@ -76,7 +76,7 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/" }),
   async (req, res) => {
     req.session.user = req.user;
-    res.redirect("https://food-client-bay.vercel.app/");
+    res.redirect("https://food-client-bay.vercel.app");
   }
 );
 
