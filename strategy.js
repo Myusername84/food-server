@@ -16,7 +16,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3001/google/callback",
+      callbackURL: "https://food-server-iohq.onrender.com/google/callback",
     },
     async function (accessToken, refreshToken, profile, done) {
       const db = await connect();

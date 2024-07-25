@@ -7,7 +7,6 @@ import session from "express-session";
 import passport from "passport";
 import connect from "./mongoConnect.js";
 import "./strategy.js";
-import MongoStore from "connect-mongo";
 
 const app = express();
 
@@ -37,15 +36,10 @@ app.use(
     resave: false,
     name: "MyCoolWebAppCookieName",
 
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_URI,
-      collectionName: "sessions",
-    }),
-
     cookie: {
       maxAge: 60000 * 60 * 10,
       sameSite: "none",
-      secure: false,
+      secure: true,
       httpOnly: true,
     },
   })
